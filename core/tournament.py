@@ -150,7 +150,7 @@ class Tournament:
         pop_size = len(population)
         history = []
 
-        # Reset history lists on new run
+        # Reset history lists on the new run
         self.leaderboard_history = []
         self.match_history = []
 
