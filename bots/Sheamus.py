@@ -10,14 +10,14 @@ class Sheamus(BaseBot):
             return Move.COOPERATE
         else:
             opponent_last_move = game_state.last_opponent_move()
-            if nice == True:
-              if len(LastMoves)>1:
-                LastMoves.pop(0)
-              LastMoves.append(opponent_last_move)
-              if LastMoves[0] == Move.DEFECT and LastMoves[1] == Move.DEFECT:
-                nice = False
-            if opponent_last_move == Move.DEFECT and nice == False:
+            if self.nice == True:
+              if len(self.LastMoves)>1:
+                self.LastMoves.pop(0)
+              self.LastMoves.append(opponent_last_move)
+              if self.LastMoves[0] == Move.DEFECT and self.LastMoves[1] == Move.DEFECT:
+                self.nice = False
+            if opponent_last_move == Move.DEFECT and self.nice == False:
                 return Move.DEFECT
-            if roundCounter == 500:
+            if self.roundCounter == 500:
                 return Move.DEFECT
         return Move.COOPERATE
