@@ -4,12 +4,14 @@ import matplotlib.pyplot as plt
 from core.util import draw_leaderboard
 from bots.always_cooperate import AlwaysCooperate
 from bots.always_defect import AlwaysDefect
+from bots.punisher import Punisher
 
 def main(compete=False):
     # Add bot instances here:
     bots = [
         AlwaysCooperate(),
-        AlwaysDefect()
+        AlwaysDefect(),
+        Punisher(),
     ]
 
     tournament = Tournament(bots, noise_rate=0.03)
@@ -27,7 +29,8 @@ def main(compete=False):
         # Plot evolution
         all_bots = [
             "AlwaysCooperate",
-            "AlwaysDefect"
+            "AlwaysDefect",
+            "Punisher"
         ]
 
         result = plot_bar_race(history, all_bots, interval=1000, frames_per_gen=5)
