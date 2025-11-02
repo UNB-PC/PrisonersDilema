@@ -19,11 +19,11 @@ class Mia(BaseBot):
 
             if (opponent_last_move == Move.COOPERATE):
                 if random.random() < self.coop_rate:
-                    return Move.DEFECT
-                else:
                     return Move.COOPERATE
+                else:
+                    return Move.DEFECT
             else:
                 if random.random() < self.defect_rate:
-                    return Move.DEFECT
-                else:
                     return Move.COOPERATE
+                else:
+                    return Move.DEFECT
