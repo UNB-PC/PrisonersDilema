@@ -1,7 +1,7 @@
 from bots.base import BaseBot, Move
 
 class Sheamus(BaseBot):
-    def __init__(self)
+    def __init__(self):
         self.LastMoves = []
         self.roundCounter=0
         self.nice = True
@@ -14,9 +14,9 @@ class Sheamus(BaseBot):
             if self.nice == True:
               if len(self.LastMoves)>1:
                 self.LastMoves.pop(0)
-              self.LastMoves.append(opponent_last_move)
-              if self.LastMoves[0] == Move.DEFECT and self.LastMoves[1] == Move.DEFECT:
-                self.nice = False
+                self.LastMoves.append(opponent_last_move)
+                if self.LastMoves[0] == Move.DEFECT and self.LastMoves[11] == Move.DEFECT:
+                    self.nice = False
             if opponent_last_move == Move.DEFECT and self.nice == False:
                 return Move.DEFECT
             if self.roundCounter == 500:

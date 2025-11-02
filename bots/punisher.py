@@ -11,7 +11,7 @@ class Punisher(BaseBot):
 
     def get_move(self, game_state):
         if not self.opp_history:
-            return Move.DEFECT
+            return Move.COOPERATE
         
         last_opp = self.opp_history[-1]
         if last_opp == Move.COOPERATE:

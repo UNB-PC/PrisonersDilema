@@ -4,21 +4,44 @@ import matplotlib.pyplot as plt
 from core.util import draw_leaderboard
 from bots.always_cooperate import AlwaysCooperate
 from bots.always_defect import AlwaysDefect
+from bots.chaos_agent import ChaosAgent
+from bots.justin import JustinBot
+from bots.mia import Mia
 from bots.punisher import Punisher
+from bots.Ratatoskr import Ratatoskr
+from bots.tot import TotBot
+from bots.TitForTat import TitForTat
+from bots.WouldILieToYou import WouldILieToYou
+from bots.totreversed import TotReversedBot
+from bots.generous_tit_for_tat import GenerousTitForTat
+from bots.Ygddrasil import Ygddrasil
+from bots.Sheamus import Sheamus
 
 def main(compete=False):
     # Add bot instances here:
     bots = [
         AlwaysCooperate(),
         AlwaysDefect(),
+        ChaosAgent(),
+        JustinBot(),
+        Mia(),
         Punisher(),
+        Ratatoskr(),
+        TotBot(),
+        TitForTat(),
+        WouldILieToYou(),
+        TotReversedBot(),
+        GenerousTitForTat(),
+        Ygddrasil(),
+        Sheamus()
     ]
+
 
     tournament = Tournament(bots, noise_rate=0.03)
     history = tournament.run_evolution(
         generations=20,
-        survival_rate=0.80,
-        rounds_per_match=500,
+        survival_rate=0.75,
+        rounds_per_match=300,
         mutate=True
     )
 
@@ -30,8 +53,21 @@ def main(compete=False):
         all_bots = [
             "AlwaysCooperate",
             "AlwaysDefect",
-            "Punisher"
+            "ChaosAgent",
+            "JustinBot",
+            "Mia",
+            "Punisher",
+            "Ratatoskr",
+            "TotBot",
+            "TitForTat",
+            "WouldILieToYou",
+            "TotReversedBot",
+            "GenerousTitForTat",
+            "Ygddrasil",
+            "Sheamus"
         ]
+
+
 
         result = plot_bar_race(history, all_bots, interval=1000, frames_per_gen=5)
         ani = result[0]
@@ -45,5 +81,6 @@ def main(compete=False):
         draw_leaderboard(result[1], result[2])
 
 
+
 if __name__ == "__main__":
-    main(False)
+    main(True)

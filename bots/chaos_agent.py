@@ -6,11 +6,11 @@ class ChaosAgent(BaseBot):
 
     def get_move(self, game_state):
         rounds = self.counter // 500
-        limit = (rounds + 1)*50
+        limit = (rounds + 1)*449
         self.counter += 1
         rand = random.randint(1,100)
 
-        if rand > 95 and self.counter < limit:
+        if rand > 60 and self.counter < limit:
             result = Move.DEFECT
         else:
             result = Move.COOPERATE

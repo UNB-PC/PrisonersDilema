@@ -1,12 +1,13 @@
 from bots.base import BaseBot, Move
 
-class NowYouSeeMe(BaseBot):
+class WouldILieToYou(BaseBot):
     counter = 0
     def get_move(self, game_state):
-        # print("Winner is now_you_see_me.py")
+        # print("Winner is would_i_lie_to_you.py")
         self.counter += 1
-        is_even = False
-        if self.counter % 2 == 1:
+        remaining_matches = self.counter % 500
+        result = ""
+        if remaining_matches > 449:
             result = Move.COOPERATE
         else:
             result = Move.DEFECT
