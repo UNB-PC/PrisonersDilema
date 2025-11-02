@@ -1,11 +1,12 @@
 from bots.base import BaseBot, Move
 
 class Sheamus(BaseBot):
-    LastMoves = []
-    roundCounter=0
-    nice = True
+    def __init__(self)
+        self.LastMoves = []
+        self.roundCounter=0
+        self.nice = True
     def get_move(self, game_state):
-        roundCounter = roundCounter+1
+        self.roundCounter = self.roundCounter+1
         if not game_state.opponent_history: # First round, no history yet
             return Move.COOPERATE
         else:
